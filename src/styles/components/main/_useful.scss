@@ -1,0 +1,194 @@
+.useful {
+  padding-top: 40px;
+  padding-bottom: 35px;
+
+  @include mobile {
+    margin-bottom: 48px;
+  }
+
+  &__block {
+    position: relative;
+  }
+
+  &__swiper-button-prev {
+    top: 3.5%;
+    left: 92.7%;
+    width: 32px;
+    height: 32px;
+    outline: none;
+
+    svg,
+    svg path,
+    svg circle {
+      transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+    }
+
+    &:focus-visible svg,
+    &:focus-visible path {
+      fill: var(--violet-primaryL-color);
+      stroke: var(--light-color);
+    }
+    &:focus-visible circle {
+      stroke: var(--violet-primary-color);
+    }
+
+    &:hover svg,
+    &:hover svg path {
+      fill: var(--violet-primary-color);
+      stroke: var(--light-color);
+    }
+
+    &:active svg,
+    &:active svg circle,
+    &:active svg path {
+      fill: var(--violet-primaryD-color);
+      stroke: var(--light-color);
+    }
+
+    @include tablet {
+      left: 88%;
+    }
+
+    @include small-tablet {
+      left: 80%;
+    }
+
+    @media (max-width: 620px) {
+      top: 105%;
+      left: 41%;
+    }
+
+    @include mobile {
+      top: 107.7%;
+      left: 38%;
+    }
+  }
+
+  &__swiper-button-next {
+    top: 3.5%;
+    left: 96.4%;
+    width: 32px;
+    height: 32px;
+    outline: none;
+
+    svg,
+    svg path,
+    svg circle {
+      transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+    }
+
+    &:focus-visible svg,
+    &:focus-visible path {
+      fill: var(--violet-primaryL-color);
+      stroke: var(--light-color);
+    }
+    &:focus-visible circle {
+      stroke: var(--violet-primary-color);
+    }
+
+    &:hover svg,
+    &:hover svg path {
+      fill: var(--violet-primary-color);
+      stroke: var(--light-color);
+    }
+
+    &:active svg,
+    &:active svg circle,
+    &:active svg path {
+      fill: var(--violet-primaryD-color);
+      stroke: var(--light-color);
+    }
+
+    @include tablet {
+      left: 93.3%;
+    }
+
+    @include small-tablet {
+      left: 86.6%;
+    }
+
+    @media (max-width: 620px) {
+      top: 105%;
+      left: 53%;
+    }
+
+    @include mobile {
+      top: 107.7%;
+      left: 52%;
+    }
+  }
+
+  &__swiper-slide {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--greyF7-color);
+    border-radius: 10px;
+    min-height: 676px;
+    height: auto;
+
+    @include tablet {
+      min-height: 456px;
+    }
+  }
+
+  &__image {
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    padding: 30px;
+
+    @include tablet {
+      padding: 30px 10px 30px 30px;
+    }
+
+    p {
+      margin-bottom: 34px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 33px;
+      color: #333333;
+
+      @include tablet {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__btn {
+    display: block;
+    padding: 18px 35px;
+    margin-top: auto;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--violet-primary-color);
+    border: 2px solid var(--violet-primary-color);
+    border-radius: 10px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+      outline 0.3s ease-in-out;
+
+    &:focus-visible {
+      background-color: var(--violet-primaryL-color);
+      color: var(--light-color);
+      outline: 2px solid var(--violet-primary-color);
+    }
+
+    &:hover {
+      background-color: var(--violet-primary-color);
+      color: var(--light-color);
+    }
+
+    &:active {
+      background-color: var(--violet-primaryD-color);
+      color: var(--light-color);
+    }
+  }
+}

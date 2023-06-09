@@ -1,0 +1,118 @@
+.burger {
+  display: none;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  @media (max-width: 875px) {
+    @include burger;
+    display: block;
+    color: var(--violet-primary-color);
+    z-index: 101;
+
+    &:focus-visible {
+      outline: none;
+      transform: scale(1.1, 1.1);
+      color: var(--violet-primaryL-color);
+    }
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+      color: var(--violet-primaryL-color);
+    }
+
+    &:active {
+      transform: scale(1.1, 1.1);
+      color: var(--violet-primaryD-color);
+    }
+  }
+}
+
+.info-burger {
+  display: none;
+}
+
+@media (max-width: 875px) {
+  .menu--active {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 108px;
+    padding: 92px 72px 60px 72px;
+    overflow-y: auto;
+    max-width: 100%;
+    min-height: 300px;
+    background: var(--light-color);
+    z-index: 100;
+    background-image: url("../img/header/burger-elefant.png");
+    background-position: right 72px bottom 60px;
+    background-repeat: no-repeat;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: 710px) {
+      top: 58px;
+    }
+
+    @include mobile {
+      top: 148px;
+      height: calc(100vh - 152px);
+    }
+  }
+
+  .header__nav-list {
+    display: block;
+    columns: 2;
+    width: 60%;
+    z-index: 500;
+
+    li {
+      columns: auto;
+      margin-right: 64px;
+      margin-bottom: 35px;
+    }
+    li:nth-child(3n) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include mobile {
+  .menu--active {
+    right: 0;
+    padding: 57px 12px 0 12px;
+    min-width: 320px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .header__nav {
+    min-width: 320px;
+    background-image: none;
+    flex-direction: column;
+  }
+
+  .header__nav-list {
+    columns: 1;
+    width: 100%;
+    padding: 5px 10px 26px 30px;
+    background-image: none;
+
+    li {
+      margin: 0 0 20px;
+    }
+
+    li:nth-child(3) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .info-burger {
+    display: block;
+    columns: 2;
+    margin-top: auto;
+    padding: 24px 12px;
+    background-color: #f6f6f6;
+  }
+
+  .item-burger {
+    margin-bottom: 12px;
+  }
+}

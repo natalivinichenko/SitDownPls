@@ -1,0 +1,176 @@
+@import "_mixins.scss";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@include font-face("OpenSans", "../fonts/OpenSans-Regular", 400, normal);
+@include font-face("OpenSans", "../fonts/OpenSans-SemiBold", 500, normal);
+@include font-face("OpenSans", "../fonts/OpenSans-Bold", 700, normal);
+@include font-face("OpenSans", "../fonts/PlayfairDisplay-Black", 900, normal);
+
+.page {
+  height: 100%;
+  font-family: var(--font-family, sans-serif);
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.body {
+  min-width: 320px;
+
+  &__container {
+    overflow: hidden; 
+  }
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.fl-dr-col {
+  flex-direction: column;
+}
+
+.jf-sb {
+  justify-content: space-between;
+}
+
+.jf-end {
+  justify-content: end;
+}
+
+.jf-start {
+  justify-content: start;
+}
+
+.jf-center {
+  justify-content: center;
+}
+
+.al-i-center {
+  align-items: center;
+}
+
+.al-i-start {
+  align-items: start;
+}
+
+.d-none {
+  display: none;
+}
+
+.caption {
+  margin-bottom: 26px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
+  color: var(--black-color);
+
+  @include mobile {
+    font-size: 24px;
+  }
+}
+
+.text {
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--black-color);
+  font-weight: 400;
+}
+
+.text-grey {
+  font-size: 16px;
+  line-height: 100%;
+  color: var(--grey-color);
+  font-weight: 400;
+
+  @include small-tablet {
+    font-size: 14px;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.is-invalid {
+  border: 1px solid red;
+  text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+}
+
+.stop-scroll {
+  overflow: hidden;
+}

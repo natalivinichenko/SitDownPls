@@ -1,0 +1,34 @@
+:root {
+  --font-family: "OpenSans" , sans-serif;
+  --content-width: 1280px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  @media (max-width: 1024px) {
+    --content-width: 952px;
+    --container-offset: 36px;
+  }
+
+  @media (max-width: 768px) {
+    --content-width: 624px;
+    --container-offset: 72px;
+  }
+
+  @media (max-width: 576px) {
+    --content-width: 572px;
+    --container-offset: 12px;
+  }
+
+  --light-color: #fff;
+  --violet-primary-color: #A65CF0;
+  --violet-primaryL-color: #C998FB;
+  --violet-primaryD-color: #7033AC;
+  --violet-pink-color: #EBD1FF;
+  --violet-pinkL-color: #F8EFFF;
+  --orange-color: #FF862F;
+  --black-color: #333333;
+  --grey-shade-color: #666666;
+  --grey-color: #999999;
+  --greyF7-color: #F7F7F7;
+
+}

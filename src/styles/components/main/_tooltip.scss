@@ -1,0 +1,76 @@
+#tooltip {
+  padding: 5px;
+  width: 157px;
+  background: #333;
+  color: white;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 14px;
+  text-align: center;
+  display: none;
+}
+
+#tooltip[data-show] {
+  display: block;
+  z-index: 2;
+}
+
+#arrow,
+#arrow::before {
+  position: absolute;
+  left: 10%;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+
+#arrow {
+  visibility: hidden;
+}
+
+#arrow::before {
+  visibility: visible;
+  content: "";
+  transform: rotate(45deg);
+}
+
+#tooltip[data-popper-placement^="top"] > #arrow {
+  bottom: -4px;
+}
+
+#tooltip[data-popper-placement^="bottom"] > #arrow {
+  top: -4px;
+}
+
+#tooltip[data-popper-placement^="left"] > #arrow {
+  right: -4px;
+}
+
+#tooltip[data-popper-placement^="right"] > #arrow {
+  left: -4px;
+}
+
+#button {
+  vertical-align: sub;
+  outline: none;
+
+  &:focus-visible svg use {
+    fill: rgb(255, 255, 255);
+  }
+
+  &:focus-visible svg {
+    border-radius: 50px;
+    border: 1px solid var(--orange-color);
+    background-color: var(--orange-color);
+  }
+
+  &:hover svg use {
+    fill: rgb(255, 255, 255);
+  }
+
+  &:hover svg {
+    border-radius: 50px;
+    border: 1px solid var(--orange-color);
+    background-color: var(--orange-color);
+  }
+}

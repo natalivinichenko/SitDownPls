@@ -1,0 +1,49 @@
+.breadcrumb {
+  padding-top: 15px;
+  flex-wrap: wrap;
+
+  @include tablet {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  ul {
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: block;
+    padding: 2px 3px;
+    font-size: 14px;
+    outline: none;
+
+    &:last-child {
+      color: var(--violet-primary-color);
+    }
+
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+
+    &:not(:first-child) {
+      margin-left: 6px;
+    }
+
+    &:hover {
+      color: var(--violet-primary-color);
+    }
+
+    &:focus-visible {
+      color: var(--violet-primaryD-color);
+      background-color: var(--violet-pink-color);
+    }
+
+    &:active {
+      color: var(--violet-primaryD-color);
+    }
+  }
+}

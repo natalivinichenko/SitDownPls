@@ -1,0 +1,121 @@
+.cooperation-text-gray {
+  font-size: 16px;
+  line-height: 180%;
+  font-weight: 400;
+  color: var(--grey-shade-color);
+}
+
+.cooperation-title {
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--black-color);
+  line-height: 33px;
+}
+
+.cooperation-orange-text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--orange-color);
+}
+
+.cooperation {
+  color: var(--black-color);
+
+  &__container {
+    max-width: 841px;
+  }
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+  }
+
+  &__provider {
+    margin-bottom: 32px;
+  }
+
+  &__benefit {
+    margin-bottom: 32px;
+  }
+
+  &__advantages {
+    margin-bottom: 34px;
+  }
+
+  &__warranty {
+    margin-bottom: 67px;
+  }
+}
+
+.provider {
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &____descr {
+    margin-bottom: 12px;
+  }
+}
+
+.benefit {
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    @include mb(12px);
+  }
+
+  &__contant__svg {
+    margin-right: 12px;
+  }
+
+  &__contant__descr {
+    max-width: 70%;
+    line-height: 150%;
+  }
+}
+
+.advantages {
+  &__title {
+    margin-bottom: 12px;
+
+    &-mini {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 12px;
+  }
+}
+
+.warranty {
+  &__title {
+    margin-bottom: 14px;
+  }
+
+  &__items {
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    @include mb(12px);
+  }
+
+  &__item__number {
+    margin-right: 14px;
+  }
+
+  &__period__image {
+    margin-right: 32px;
+  }
+
+  &__period__descr {
+    max-width: 515px;
+    justify-content: center;
+    align-items: center;
+  }
+}

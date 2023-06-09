@@ -1,0 +1,53 @@
+.catalog {
+  .custom-checkbox {
+    @include custom-checkbox;
+    margin-bottom: 11px;
+
+    &__content {
+      padding-left: 32px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--grey-shade-color);
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--violet-primary-color);
+      }
+      &:active {
+        color: var(--violet-primaryD-color);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 1px solid #999999;
+        border-radius: 2px;
+        width: 20px;
+        height: 20px;
+        box-sizing: border-box;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        box-sizing: border-box;
+        background-image: url("../img/checkbox-chek.svg");
+        background-position: center center;
+        background-size: 12.65px 10px;
+        background-repeat: no-repeat;
+        background-color: var(--violet-primary-color);
+        border: 1px solid var(--violet-primary-color);
+        border-radius: 2px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+  }
+}

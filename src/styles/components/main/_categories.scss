@@ -1,0 +1,353 @@
+.categories {
+  padding-top: 70px;
+  padding-bottom: 30px;
+
+  @include mobile {
+    padding-bottom: 38px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 511px 405px;
+    grid-gap: 32px;
+    grid-template-areas:
+      "card-1 card-1 card-1 card-1 card-1 card-1 card-2 card-2 card-2 card-2 card-2 card-2"
+      "card-3 card-3 card-3 card-3 card-4 card-4 card-4 card-4 card-5 card-5 card-5 card-5";
+
+    @include tablet {
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: 511px 511px;
+      grid-template-areas:
+        "card-1 card-1 card-1 card-1 card-1 card-1 card-3 card-3 card-3"
+        "card-4 card-4 card-4 card-2 card-2 card-2 card-5 card-5 card-5";
+    }
+
+    @include small-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, 511px);
+      grid-template-areas:
+        "card-1 card-1 card-1 card-1 card-1 card-1"
+        "card-3 card-3 card-3 card-2 card-2 card-2"
+        "card-4 card-4 card-4 card-5 card-5 card-5";
+    }
+
+    @include mobile {
+      grid-template-rows: 332px 206px 206px;
+      grid-row-gap: 32px;
+      grid-column-gap: 16px;
+    }
+  }
+
+  #catCard-1 {
+    grid-area: card-1;
+  }
+  #catCard-2 {
+    grid-area: card-2;
+  }
+  #catCard-3 {
+    grid-area: card-3;
+  }
+  #catCard-4 {
+    grid-area: card-4;
+  }
+  #catCard-5 {
+    grid-area: card-5;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: var(--greyF7-color);
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: 0 60%;
+
+    @include mobile {
+      padding: 16px;
+      background-position: left bottom;
+    }
+
+    ul {
+      margin-bottom: 9px;
+      flex-wrap: wrap;
+
+      li {
+        @include mobile {
+          font-size: 10px;
+        }
+
+        a {
+          padding: 0 2px;
+          outline: none;
+          transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+          &:focus-visible {
+            background-color: var(--violet-pink-color);
+            color: var(--violet-primary-color);
+          }
+
+          &:hover {
+            color: var(--violet-primary-color);
+          }
+
+          &:active {
+            color: var(--violet-primaryD-color);
+          }
+
+          @include tablet {
+            font-size: 14px;
+            line-height: 100%;
+          }
+
+          @include mobile {
+            font-size: 10px;
+          }
+        }
+      }
+
+      li:not(:last-child) {
+        margin-right: 30px;
+        margin-bottom: 5px;
+
+        @include mobile {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    h3 {
+      margin-right: 5px;
+    }
+
+    &-1 {
+      ul {
+        @include mobile {
+          &:first-child {
+            padding-top: 15px;
+            padding-left: 10px;
+          }
+        }
+
+        li {
+          a {
+            @include mobile {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      h3 {
+        @include mobile {
+          padding-left: 15px;
+          font-size: 24px;
+          line-height: 33px;
+        }
+      }
+    }
+
+    &-link {
+      position: relative;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      width: max-content;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 120%;
+      color: var(--violet-primary-color);
+      outline: none;
+
+      &:focus-visible::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 81px;
+        height: 2px;
+        background-color: var(--violet-primary-color);
+        animation: anim 0.3s ease;
+      }
+
+      &:focus-visible svg,
+      &:focus-visible svg path {
+        fill: var(--violet-primaryL-color);
+        stroke: var(--light-color);
+      }
+
+      &:focus-visible svg circle {
+        stroke: var(--violet-primary-color);
+      }
+
+      &:hover:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 81px;
+        height: 2px;
+        background-color: var(--violet-primary-color);
+        animation: anim 0.3s ease;
+      }
+
+      &:hover svg,
+      &:hover svg path {
+        fill: var(--violet-primary-color);
+        stroke: var(--light-color);
+      }
+
+      &:active::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        width: 81px;
+        height: 2px;
+        background-color: var(--violet-primaryD-color);
+        animation: anim 0.3s ease;
+      }
+
+      &:active {
+        color: var(--violet-primaryD-color);
+      }
+
+      &:active svg,
+      &:active svg path {
+        fill: var(--violet-primaryD-color);
+        stroke: var(--light-color);
+      }
+
+      &:active svg circle {
+        stroke: var(--violet-primaryD-color);
+      }
+
+      @keyframes anim {
+        0% {
+          transform: scale(0, 0);
+          transform-origin: left;
+        }
+        100% {
+          transform: scale(1, 1);
+          transform-origin: left;
+        }
+      }
+
+      @include mobile {
+        display: none;
+      }
+
+      svg {
+        margin-left: 5px;
+        transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &__card-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    color: var(--black-color);
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__card-btn {
+    display: none;
+
+    svg,
+    svg path,
+    svg circle {
+      transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+    }
+
+    &:focus-visible svg,
+    &:focus-visible path {
+      fill: var(--violet-primaryL-color);
+      stroke: var(--light-color);
+    }
+
+    &:focus-visible circle {
+      stroke: var(--violet-primary-color);
+    }
+
+    &:hover svg,
+    &:hover svg path {
+      fill: var(--violet-primary-color);
+      stroke: var(--light-color);
+    }
+
+    &:active svg,
+    &:active svg circle,
+    &:active svg path {
+      fill: var(--violet-primaryD-color);
+      stroke: var(--light-color);
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__card-1 {
+    background-image: url("../img/main/categories/card-1.webp");
+
+    @include tablet {
+      background-image: url("../img/main/categories/card-1024-1.webp");
+    }
+
+    @include mobile {
+      background-image: url("../img/main/categories/card-320-1.webp");
+    }
+  }
+
+  &__card-2 {
+    background-image: url("../img/main/categories/card-2.webp");
+
+    @include tablet {
+      background-image: url("../img/main/categories/card-1024-2.webp");
+    }
+
+    @include mobile {
+      background-image: url("../img/main/categories/card-320-2.webp");
+    }
+  }
+
+  &__card-3 {
+    background-image: url("../img/main/categories/card-3.webp");
+
+    @include tablet {
+      background-image: url("../img/main/categories/card-1024-3.webp");
+    }
+
+    @include mobile {
+      background-image: url("../img/main/categories/card-320-3.webp");
+    }
+  }
+
+  &__card-4 {
+    background-image: url("../img/main/categories/card-4.webp");
+
+    @include tablet {
+      background-image: url("../img/main/categories/card-1024-4.webp");
+    }
+
+    @include mobile {
+      background-image: url("../img/main/categories/card-320-4.webp");
+    }
+  }
+
+  &__card-5 {
+    background-image: url("../img/main/categories/card-5.webp");
+
+    @include tablet {
+      background-image: url("../img/main/categories/card-1024-5.webp");
+    }
+
+    @include mobile {
+      background-image: url("../img/main/categories/card-320-5.webp");
+    }
+  }
+}

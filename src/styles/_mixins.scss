@@ -1,0 +1,213 @@
+@mixin font-face($font-family, $url, $weight, $style) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src: url('../fonts/#{$url}.woff2') format("woff2");
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: $style;
+  }
+}
+  
+  @mixin tablet {
+    @media (max-width: (1024px)) {
+      @content;
+    }
+  }
+  
+  @mixin small-tablet {
+    @media (max-width: (768px)) {
+      @content;
+    }
+  }
+  
+  @mixin mobile {
+    @media (max-width: (576px)) {
+      @content;
+    }
+  }
+
+  @mixin burger {
+    --burger-width: 24px;
+    --burger-height: 24px;
+    --burger-line-height: 3px;
+  
+    position: relative;
+    border: none;
+    padding: 0;
+    width: var(--burger-width);
+    height: var(--burger-height);
+    color: #000;
+    background-color: transparent;
+    cursor: pointer;
+  
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: var(--burger-line-height);
+      background-color: currentColor;
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+  
+    &::before {
+      top: 0;
+    }
+  
+    &::after {
+      top: calc(100% - var(--burger-line-height));
+    }
+  
+    &__line {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: var(--burger-line-height);
+      background-color: currentColor;
+      transform: translateY(-50%);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    &--active {
+      &::before {
+        top: 50%;
+        transform: rotate(45deg);
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      }
+  
+      &::after {
+        top: 50%;
+        transform: rotate(-45deg);
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+      }
+  
+      .burger__line {
+        transform: scale(0);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  }
+  
+  @mixin mr($value) {
+      &:not(:last-child) {
+          margin-right: $value;
+      }
+  }
+  
+  @mixin ml($value) {
+      &:not(:last-child) {
+          margin-left: $value;
+      }
+  }
+  
+  @mixin mb($value) {
+      &:not(:last-child) {
+          margin-bottom: $value;
+      }
+  }
+  
+  @mixin mt($value) {
+      &:not(:last-child) {
+          margin-top: $value;
+      }
+  }
+  
+  @mixin custom-checkbox {
+    position: relative;
+  
+    &__field {
+      appearance: none;
+      position: absolute;
+    }
+  
+    &__content {
+      padding-left: 20px;
+      cursor: pointer;
+  
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10%;
+        border: 2px solid #999999;
+        border-radius: 2px;
+        width: 14px;
+        height: 14px;
+        box-sizing: border-box;
+      }
+  
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10%;
+        width: 14px;
+        height: 14px;
+        box-sizing: border-box;
+        background-image: url("../img/checkbox-chek.svg");
+        background-position: center center;
+        background-size: 12px 12px;
+        background-repeat: no-repeat;
+        background-color: var(--violet-primary-color);
+        border: 1px solid var(--violet-primary-color);
+        border-radius: 2px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+  }
+  
+  .custom-checkbox__field:checked + .custom-checkbox__content::after {
+    opacity: 1;
+  }
+  
+  .custom-checkbox__field:focus-visible + .custom-checkbox__content::before {
+    outline: 2px solid var(--violet-primary-color);
+    outline-offset: 2px;
+  }
+  
+  .custom-checkbox__field:hover + .custom-checkbox__content::before {
+    border: 2px solid var(--violet-primary-color);
+  }
+  .custom-checkbox__field:disabled + .custom-checkbox__content {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  @mixin hover {
+    @media (any-hover: hover) {
+      &:hover {
+        @content;
+      }
+    }
+  }
+  
+  @mixin flex {
+    display: flex;
+  }
+  
+  @mixin flex-all-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  @mixin tabs {
+    .tabs__nav-btn--active {
+      background-color: var(--violet-primary-color);
+      color: var(--light-color);
+      border: 2px solid var(--violet-primary-color);
+    }
+  
+    .tabs__panel {
+      display: none;
+    }
+  
+    .tabs__panel--active {
+      display: grid;
+    }
+  }
+  

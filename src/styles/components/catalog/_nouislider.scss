@@ -1,0 +1,113 @@
+#input-with-keypress-0,
+#input-with-keypress-1 {
+  position: relative;
+  padding: 5px 3px;
+  margin-left: 9px;
+  max-width: 90px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #666666;
+  text-align: center;
+  border: 1px solid #999999;
+  border-radius: 2px;
+  transition: border 0.3s ease-in-out, outline 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  &:focus-visible {
+    border: 1px solid #ffffff;
+    outline: 2px solid var(--violet-primary-color);
+    background-color: var(--violet-pink-color);
+  }
+  &:hover {
+    border: 1px solid #ffffff;
+    outline: 2px solid var(--violet-primary-color);
+    outline-offset: -2px;
+  }
+  &:active {
+    border: 1px solid #ffffff;
+    outline: 2px solid var(--violet-primaryD-color);
+  }
+}
+
+.slider-input {
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #666666;
+}
+
+.noUi-base {
+  position: relative;
+}
+
+.noUi-base,
+.noUi-connects {
+  height: max-content;
+}
+
+.noUi-target {
+  border: none;
+  box-shadow: none;
+  height: 100%;
+  margin-bottom: 15px;
+}
+
+.noUi-connects {
+  height: 3px;
+  border-radius: 3px;
+  background-color: #eaeaea;
+}
+
+.noUi-connect {
+  background-color: var(--violet-primary-color);
+}
+
+.noUi-horizontal .noUi-handle {
+  outline: none;
+  &::after {
+    content: none;
+  }
+  &::before {
+    content: none;
+  }
+}
+
+.noUi-connect,
+.noUi-origin {
+  will-change: transform;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 3px;
+  width: 100%;
+  transform-origin: 0 0;
+  transform-style: flat;
+}
+
+.noUi-horizontal .noUi-handle {
+  right: -149px;
+  position: relative;
+  top: 3px;
+  height: 13px;
+  border: none;
+  box-shadow: none;
+  background-image: url("../img/catalog/catalog/bg.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  cursor: pointer;
+
+  &:focus-visible {
+    background-image: url("../img/catalog/catalog/bg-focus.svg");
+  }
+
+  &:hover {
+    background-image: url("../img/catalog/catalog/bg-hover.svg");
+  }
+
+  &:active {
+    background-image: url("../img/catalog/catalog/bg-focus.svg");
+  }
+}

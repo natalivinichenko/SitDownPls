@@ -1,0 +1,163 @@
+.products {
+  padding-top: 79px;
+  padding-bottom: 22px;
+
+  @include mobile {
+    padding-bottom: 50px;
+  }
+
+  @include small-tablet {
+    padding-top: 14px;
+  }
+
+  &__container {
+    padding: 0;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    color: var(--black-color);
+  }
+
+  &__swiper-button-prev {
+    top: 4.5%;
+    left: 94%;
+    width: 32px;
+    height: 32px;
+    outline: none;
+
+    svg,
+    svg path,
+    svg circle {
+      transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+    }
+
+    &:focus-visible svg,
+    &:focus-visible path {
+      fill: var(--violet-primaryL-color);
+      stroke: var(--light-color);
+    }
+    &:focus-visible circle {
+      stroke: var(--violet-primary-color);
+    }
+
+    &:hover svg,
+    &:hover svg path {
+      fill: var(--violet-primary-color);
+      stroke: var(--light-color);
+    }
+
+    &:active svg,
+    &:active svg circle,
+    &:active svg path {
+      fill: var(--violet-primaryD-color);
+      stroke: var(--light-color);
+    }
+
+    @include tablet {
+      left: 89%;
+    }
+
+    @include small-tablet {
+      left: 80%;
+    }
+
+    @media (max-width: 620px) {
+      top: 106%;
+      left: 41%;
+    }
+
+    @include mobile {
+      top: 111%;
+      left: 38.5%;
+    }
+  }
+
+  &__swiper-button-next {
+    top: 4.5%;
+    left: 97%;
+    width: 32px;
+    height: 32px;
+    outline: none;
+
+    svg,
+    svg path,
+    svg circle {
+      transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+    }
+
+    &:focus-visible svg,
+    &:focus-visible path {
+      fill: var(--violet-primaryL-color);
+      stroke: var(--light-color);
+    }
+    &:focus-visible circle {
+      stroke: var(--violet-primary-color);
+    }
+
+    &:hover svg,
+    &:hover svg path {
+      fill: var(--violet-primary-color);
+      stroke: var(--light-color);
+    }
+
+    &:active svg,
+    &:active svg circle,
+    &:active svg path {
+      fill: var(--violet-primaryD-color);
+      stroke: var(--light-color);
+    }
+
+    @include tablet {
+      left: 93.3%;
+    }
+
+    @include small-tablet {
+      left: 86.6%;
+    }
+
+    @media (max-width: 620px) {
+      top: 106%;
+      left: 54%;
+    }
+
+    @include mobile {
+      top: 111%;
+      left: 52%;
+    }
+  }
+
+  &__card {
+    min-height: 360px;
+
+    @include mobile {
+      min-height: 248px;
+    }
+  }
+
+  &__card-btn {
+    width: auto;
+  }
+
+  &__card__picture {
+    width: 114%;
+    margin-left: -17px;
+  }
+
+  &__card-image {
+    display: flex;
+    margin: 0 auto;
+  }
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: "";
+}
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: "";
+}

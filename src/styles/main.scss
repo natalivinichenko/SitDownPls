@@ -1,0 +1,37 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "common";
+
+//общие стили
+@import "./components/header";
+@import "./components/header-choices";
+@import "./components/burger-main";
+@import "./components/breadcrumb";
+@import "./components/footer";
+
+// подключения компонентов страницы
+// main
+@import "./components/main/hero";
+@import "./components/main/offers";
+@import "./components/main/rating";
+@import "./components/main/categories";
+@import "./components/main/useful";
+@import "./components/main/registration";
+@import "./components/main/tooltip";
+@import "./components/main/info";
+
+// catalog
+@import "./components/catalog/catalog";
+@import "./components/catalog/checkbox";
+@import "./components/catalog/choices";
+@import "./components/catalog/nouislider";
+
+//card
+@import "./components/card/card";
+@import "./components/card/swiper-card";
+@import "./components/card/products";
+@import "./components/card/modal-img";
+
+
+@import "./components/cooperation/cooperation";

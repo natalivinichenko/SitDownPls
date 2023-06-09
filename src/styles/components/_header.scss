@@ -1,0 +1,480 @@
+.header {
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__container {
+    @include mobile {
+      margin: 0;
+    }
+  }
+
+  &__background {
+    background-color: #f7f7f7;
+
+    @include mobile {
+      background-color: #ffffff;
+    }
+  }
+
+  &__top {
+    width: 100%;
+    padding: 3px 0;
+
+    @include tablet {
+      padding: 7px 0;
+      flex-direction: column;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__right {
+      max-width: 710px;
+      width: 100%;
+
+      @include tablet {
+        max-width: 100%;
+        height: 44px;
+      }
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+
+    &__left {
+      min-width: 350px;
+
+      @include tablet {
+        justify-content: space-between;
+      }
+
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__tel {
+    padding-left: 21px;
+    min-width: 145px;
+
+    @include tablet {
+      margin: 0;
+    }
+
+    @include mobile {
+      margin-bottom: 13px;
+    }
+
+    svg use {
+      fill: var(--orange-color);
+    }
+
+    a {
+      font-size: 14px;
+      line-height: 14px;
+      color: var(--orange-color);
+    }
+  }
+
+  .tel {
+    padding: 3px 5px;
+    transition: color 0.3s ease-in-out, fill 0.3s ease-in-out,
+      background-color 0.3s ease-in-out;
+
+    &:hover .tel-icon use,
+    &:hover .tel-link {
+      color: #ffbd59;
+      fill: #ffbd59;
+    }
+
+    &:focus {
+      background-color: #fff5d1;
+      outline: none;
+    }
+
+    &:active .tel-icon use,
+    &:active .tel-link {
+      color: #bb370e;
+      fill: #bb370e;
+    }
+
+    .tel-link {
+      outline: none;
+    }
+  }
+
+  &__info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      column-gap: 5px;
+    }
+
+    &__item {
+      font-size: 13px;
+      transition: color 0.3s ease-in-out, background-color 0.3s ease-out;
+
+      &:hover {
+        color: var(--violet-primary-color);
+      }
+
+      &:focus-visible {
+        color: var(--violet-primaryD-color);
+        background-color: var(--violet-pink-color);
+        outline: none;
+      }
+
+      &:active {
+        color: var(--violet-primaryD-color);
+      }
+    }
+  }
+
+  &__logo {
+    padding: 32px 0;
+    margin-right: 20px;
+    min-width: 188px;
+
+    @media (max-width: 875px) {
+      margin: 0;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    a {
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__logo-320 {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    max-width: 950px;
+    width: 100%;
+
+    @include tablet {
+      max-width: 700px;
+    }
+
+    @media (max-width: 875px) {
+      display: none;
+    }
+
+    &-list {
+      width: 100%;
+      flex-wrap: wrap;
+
+      a {
+        padding: 2px 4px;
+        outline: none;
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      }
+
+      li:hover a {
+        color: var(--violet-primary-color);
+      }
+
+      li a:focus-visible {
+        color: var(--violet-primaryD-color);
+        background-color: var(--violet-pink-color);
+      }
+
+      li a:active {
+        color: var(--violet-primaryD-color);
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @media (max-width: 875px) {
+      display: block;
+      margin-left: 10px;
+    }
+  }
+
+  &__select {
+    @include mobile {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__center {
+    height: 92px;
+
+    @media (max-width: 875px) {
+      flex-direction: row-reverse;
+    }
+
+    @include mobile {
+      flex-direction: row;
+      height: auto;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 5px;
+
+    @include small-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      row-gap: 16px;
+    }
+  }
+
+  &__search {
+    grid-column: 1/8;
+
+    @include tablet {
+      grid-column: 1/6;
+    }
+
+    @include small-tablet {
+      grid-column: 1/8;
+      border-radius: 10px;
+    }
+  }
+
+  &__categories {
+    grid-column: 8/11;
+
+    @include tablet {
+      grid-column: 6/10;
+    }
+
+    @include small-tablet {
+      grid-column: 1/5;
+    }
+
+    @include mobile {
+      grid-column: 1/8;
+    }
+  }
+
+  .form {
+    padding: 12px 16px 12px 32px;
+    width: 100%;
+    height: 60px;
+    background-color: #f6f6f6;
+    border-radius: 10px 0 0 10px;
+    transition: background-color 0.3s ease-in-out, outline 0.3s ease-in-out;
+    cursor: pointer;
+
+    @include mobile {
+      border-radius: 10px;
+      padding-right: 32px;
+    }
+
+    &:focus {
+      outline: 2px solid var(--violet-primary-color);
+      outline-offset: -2px;
+      background-color: var(--violet-pinkL-color);
+    }
+
+    &:focus .form__input,
+    &:focus .form__label-svg {
+      background-color: var(--violet-pinkL-color);
+    }
+
+    &:hover {
+      background-color: #eaeaea;
+    }
+
+    &:hover .form__input {
+      background-color: #eaeaea;
+    }
+
+    &:hover .form__label-svg {
+      background-color: #eaeaea;
+    }
+
+    &__label {
+      &-svg {
+        fill: var(--grey-color);
+        background-color: #f6f6f6;
+        transition: background-color 0.3s ease-in-out;
+      }
+    }
+
+    &__input {
+      padding-left: 8px;
+      padding-right: 15px;
+      background-color: #f6f6f6;
+      outline: none;
+      width: 100%;
+      font-size: 16px;
+      line-height: 18.2px;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+      &::placeholder {
+        color: var(--grey-color);
+      }
+
+      &:focus::placeholder {
+        color: var(--black-color);
+      }
+
+      &:focus-visible {
+        background-color: #f6f6f6;
+      }
+
+      &:hover {
+        background-color: #eaeaea;
+      }
+
+      &:active {
+        background-color: #eaeaea;
+      }
+    }
+
+    &__btn {
+      outline: none;
+
+      svg circle,
+      svg path {
+        transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+      }
+
+      &:hover svg circle {
+        fill: var(--violet-primary-color);
+        stroke: var(--violet-primary-color);
+      }
+
+      &:hover svg path {
+        stroke: var(--light-color);
+      }
+
+      &:focus-visible svg circle {
+        fill: var(--violet-primaryL-color);
+        stroke: var(--violet-primary-color);
+      }
+
+      &:focus-visible svg path {
+        stroke: var(--light-color);
+      }
+
+      &:active svg circle {
+        fill: var(--violet-primaryD-color);
+        stroke: var(--violet-primaryD-color);
+      }
+
+      &:active svg path {
+        stroke: var(--light-color);
+      }
+    }
+  }
+
+  &__personel {
+    grid-column: 11/13;
+
+    @include tablet {
+      grid-column: 11/13;
+      display: flex;
+    }
+
+    @include small-tablet {
+      grid-column: 5/8;
+    }
+
+    @include mobile {
+      grid-column: 1/8;
+      justify-content: center;
+    }
+
+
+    a {
+      display: inline-block;
+      padding: 2px 3px;
+      fill: var(--violet-primary-color);
+      transition: fill 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      outline: none;
+      @include mr(32px);
+
+      &:hover {
+        fill: var(--violet-primaryL-color);
+      }
+
+      &:focus-visible {
+        fill: var(--light-color);
+        background-color: var(--violet-primaryL-color);
+      }
+
+      &:active {
+        fill: var(--violet-primaryD-color);
+      }
+    }
+
+    &-block {
+      position: relative;
+      padding: 2px 3px 0 14px;
+      outline: none;
+      transition: fill 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+      &:hover .header__personel-svg {
+        fill: var(--violet-primaryL-color);
+      }
+
+      &:focus-visible {
+        background-color: var(--violet-primaryL-color);
+      }
+
+      &:focus-visible .header__personel-svg {
+        fill: var(--light-color);
+      }
+
+      &:active .header__personel-svg {
+        fill: var(--violet-primaryD-color);
+        background-color: none;
+      }
+    }
+
+    &-number {
+      position: absolute;
+      top: 20%;
+      right: 30px;
+      @include flex-all-center;
+      width: 14px;
+      height: 17px;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 100%;
+      color: var(--light-color);
+      background-color: var(--orange-color);
+      border-radius: 100px;
+    }
+
+    &-svg {
+      fill: var(--violet-primary-color);
+      transition: fill 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+  }
+}
